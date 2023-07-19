@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        ".venv": true,
+        ".pytest_cache": true,
+        ".ruff_cache": true,
+        "poetry.lock": true,
+        "**/__init__.py": true,
+        "pyproject.toml": true,
+    }
+}

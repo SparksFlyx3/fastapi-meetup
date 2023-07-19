@@ -1,0 +1,50 @@
+[tool.black]
+line-length = 120
+exclude = ".pyi"
+
+[tool.ruff]
+src = ["backend"]
+exclude = ["typings"]
+
+# Enable pycodestyle ("E") and Pyflakes ("F") and isort ("I").
+select = ["E", "F", "I"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["E", "F", "I"]
+unfixable = []
+
+ignore = [
+    "E501", # line-too-long, because it's taken care of by black
+    "F403", # undefined-local-with-import-star (from {name} import * used)
+    "F405", # undefined-local-with-import-star-usage
+]
+
+# Ruff implements isort similar to these settings:
+# https://github.com/charliermarsh/ruff/issues/465#issuecomment-1308462071
+# Available configuration options: https://pypi.org/project/ruff/0.0.233/
+[tool.ruff.isort]
+combine-as-imports = true
+order-by-type = false
+force-sort-within-sections = true
+
+[tool.poetry]
+name = "fastapi-meetup"
+version = "0.0.1"
+description = "FastAPI example project"
+authors = ["Marina Hartmann <marina.hartmann@jambit.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+# No --group parameter needed, will be installed in any case
+python = "^3.11"
+pydantic = "^1.10.6"
+uvicorn = "^0.21.1"
+pyright = "^1.1.299"
+ruff = "^0.0.267"
+fastapi = "^0.100.0"
+sqlalchemy = "^2.0.19"
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
