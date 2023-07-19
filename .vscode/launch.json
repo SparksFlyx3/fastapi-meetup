@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: fastapi-meetup",
+            "type": "python",
+            "request": "launch",
+            "program": "backend/run.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+    ]
+}
