@@ -1,15 +1,10 @@
 from fastapi import FastAPI
 
 import animal_endpoints
-from database import engine
-import models
 
 # fastapi config
 app = FastAPI(title="FastAPI-Meetup")
 app.include_router(animal_endpoints.router)
-
-# create the database on startup
-models.Base.metadata.create_all(bind=engine)
 
 
 # redirect default urls to docs
