@@ -1,20 +1,24 @@
 import pydantic
 
 
-class Animal(pydantic.BaseModel):
+class AnimalCreationProperties(pydantic.BaseModel):
     name: str
-    age: int
+    age: int # = pydantic.Field(42, ge=1, le=100)
 
-    class Config:
-        orm_mode = True
+    # @pydantic.validator("age")
+    # def _validate_age_is_odd_number(cls, age: int) -> int:
+    #     if age % 2 == 0:
+    #         raise ValueError("ensure the age is an odd number")
+    #     return age
 
 
-class Cat(Animal):
-    def miau(self):
-        print(f"Cat {self.name} says miau!")
+class Animal(AnimalCreationProperties):
+    id: int
 
-    class Config:
-        orm_mode = True
+
+# class Cat(AnimalCreationProperties):
+#     def miau(self):
+#         print(f"Cat {self.name} says miau!")
 
 
 # cat = Cat(name="Bonnie", age=2)
