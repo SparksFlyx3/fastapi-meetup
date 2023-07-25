@@ -10,3 +10,5 @@ if __name__ == "__main__":
         reload_dirs=["backend"],
         log_config=None,
     )
+
+# uvicorn backend.app:app --reload

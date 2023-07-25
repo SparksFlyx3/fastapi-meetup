@@ -35,15 +35,15 @@ authors = ["Marina Hartmann <marina.hartmann@jambit.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-# No --group parameter needed, will be installed in any case
 python = "^3.11"
+fastapi = "^0.100.0"
 pydantic = "^1.10.6"
 uvicorn = "^0.21.1"
-pyright = "^1.1.299"
-ruff = "^0.0.267"
-fastapi = "^0.100.0"
-sqlalchemy = "^2.0.19"
-black = "^23.7.0"
+# can be ignored for now:
+pyright = "^1.1.299" # static typechecking
+black = "^23.7.0" # code formatting
+ruff = "^0.0.267" # code formatting
+sqlalchemy = "^2.0.19" # database
 
 [build-system]
 requires = ["poetry-core"]

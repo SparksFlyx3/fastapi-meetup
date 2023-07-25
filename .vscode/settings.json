@@ -6,6 +6,6 @@
         ".ruff_cache": true,
         "poetry.lock": true,
         "**/__init__.py": true,
-        "pyproject.toml": true,
+        // "pyproject.toml": true,
     }
 }
